@@ -41,7 +41,7 @@ In other words, we need to process task data, and score model outputs. (Note fro
 
 ### Task preprocessing
 
-The task preprocessing pipeline is define in the task object. For instance, let's look at the `MnliTask` (see: [Source](../../jiant/tasks/lib/mnli.py)). You'll notice several dataclass-like definitions, and finally the `MnliTask` object at the bottom. Our preprocessing works by converting data through a series of processing steps, from raw `Example`s all the way to `DataRow`. Let's go through each step.
+The task preprocessing pipeline is defined in the task object. For instance, let's look at the `MnliTask` (see: [Source](../../jiant/tasks/lib/mnli.py)). You'll notice several dataclass-like definitions, and finally the `MnliTask` object at the bottom. Our preprocessing works by converting data through a series of processing steps, from raw `Example`s all the way to `DataRow`. Let's go through each step.
 
 1. Raw data → `Example`: The Task object defines how to read in examples from a raw text-based format (often `.jsonl`), and returns a list or iterable of `Example`. `Example`s contain the information we need to ultimately form batches.
 2. `Example` → `TokenizedExample`: The `Example` class defines how to go from `Example`s to `TokenizedExample`s. This handles the tokenization of inputs, as well as any tokenization-related processing (e.g. mapping of span indices).
